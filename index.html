@@ -1,144 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8" />
-  <title>12 Board Booster</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: radial-gradient(circle at top, #0d0d2b 0%, #000000 100%);
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
+<meta charset="UTF-8" />
+<title>12 Board Booster</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #0d0d2b 0%, #000000 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 2px);
+    background-size: 4px 4px;
+    animation: twinkle 4s infinite linear;
+    z-index: 0;
+  }
+
+  @keyframes twinkle {
+    0% {
+      opacity: 0.8;
     }
 
-    .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: repeating-radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 2px);
-      background-size: 4px 4px;
-      animation: twinkle 4s infinite linear;
-      z-index: 0;
+    50% {
+      opacity: 1;
     }
 
-    @keyframes twinkle {
-      0% {opacity: 0.8;}
-      50% {opacity: 1;}
-      100% {opacity: 0.8;}
+    100% {
+      opacity: 0.8;
     }
+  }
 
-    .login-container {
-      position: relative;
-      z-index: 1;
-      background: rgba(0, 0, 30, 0.8);
-      border: 1px solid rgba(0, 0, 50, 0.6);
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-      padding: 30px 40px;
-      border-radius: 12px;
-      width: 350px;
-      text-align: center;
-      backdrop-filter: blur(10px);
-    }
+  .login-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 30, 0.8);
+    border: 1px solid rgba(0, 0, 50, 0.6);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    padding: 30px 40px;
+    border-radius: 12px;
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff;
-    }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
 
-    aside {
-      font-size: 1rem;
-      font-style: italic;
-      color: #87cefa;
-      margin-bottom: 20px;
-    }
+  aside {
+    font-size: 1rem;
+    font-style: italic;
+    color: #87cefa;
+    margin-bottom: 20px;
+  }
 
-    input[type="text"], input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      background: #111;
-      color: #0ff;
-      box-shadow: inset 0 0 5px #00ffff;
-    }
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #111;
+    color: #0ff;
+    box-shadow: inset 0 0 5px #00ffff;
+  }
 
-    input[type="checkbox"] {
-      margin-right: 6px;
-    }
+  input[type="checkbox"] {
+    margin-right: 6px;
+  }
 
-    label {
-      font-size: 0.9rem;
-      color: #ddd;
-    }
+  label {
+    font-size: 0.9rem;
+    color: #ddd;
+  }
 
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #00bfff;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 1.1rem;
-      cursor: pointer;
-      margin-top: 15px;
-      box-shadow: 0 0 15px #00ffff, 0 0 30px #00bfff;
-    }
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00bfff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00bfff;
+  }
 
-    button:hover {
-      background-color: #00aaff;
-    }
+  button:hover {
+    background-color: #00aaff;
+  }
 
-    .error {
-      color: #ff4444;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
+  .error {
+    color: #ff4444;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
 
-    .welcome {
-      color: #7fffd4;
-      font-weight: bold;
-      margin-bottom: 10px;
-      display: none;
-    }
+  .welcome {
+    color: #7fffd4;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: none;
+  }
 
-    footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
+  footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
 
-    .credits {
-      margin-top: 5px;
-      font-style: italic;
-      color: #f0e68c;
-    }
-  </style>
+  .credits {
+    margin-top: 5px;
+    font-style: italic;
+    color: #f0e68c;
+  }
+</style>
 </head>
+
 <body>
   <div class="stars"></div>
 
   <div class="login-container">
     <h2>12 Board Booster</h2>
-    <aside>BY – Nayan Gupta and Kavyaraj</aside>
+    <aside><b><u> BY – Nayan Gupta </u></b></aside>
 
     <div class="error" id="error"></div>
     <div class="welcome" id="welcome">🚀 Welcome to the stars!</div>
 
     <input type="text" id="username" placeholder="Username" />
     <input type="password" id="password" placeholder="Password" />
-    
+
     <div style="text-align:left; margin-bottom:10px;">
       <label><input type="checkbox" id="remember" /> Remember Me</label>
     </div>
@@ -147,12 +157,13 @@
   </div>
 
   <footer>
-    <p>🚀 This website has rights reserved and made in 2025.</p>
-    <div class="credits">Made by Nayan Gupta | Credit goes to Kavyaraj Atodariya</div>
+    <p>🚀 This website has rights reserved and made in 2025.<br> This website does not have any copyright © issues </p>
+    <div class="credits">Made by Nayan Gupta </div>
   </footer>
 
   <script>
-    function _0xdce7(_0x269f45,_0x5470bd){const _0x587aa0=_0x587a();return _0xdce7=function(_0xdce7f,_0x210b7e){_0xdce7f=_0xdce7f-0x84;let _0x10e5b5=_0x587aa0[_0xdce7f];return _0x10e5b5;},_0xdce7(_0x269f45,_0x5470bd);}const _0x5ed350=_0xdce7;(function(_0x4011f8,_0x2a1189){const _0xb42495=_0xdce7,_0x1f87ed=_0x4011f8();while(!![]){try{const _0x4a875c=-parseInt(_0xb42495(0x91))/0x1*(parseInt(_0xb42495(0x88))/0x2)+-parseInt(_0xb42495(0x97))/0x3*(-parseInt(_0xb42495(0x9d))/0x4)+-parseInt(_0xb42495(0x8e))/0x5*(-parseInt(_0xb42495(0x87))/0x6)+-parseInt(_0xb42495(0x9a))/0x7+-parseInt(_0xb42495(0x94))/0x8+parseInt(_0xb42495(0x9c))/0x9+parseInt(_0xb42495(0x8a))/0xa;if(_0x4a875c===_0x2a1189)break;else _0x1f87ed['push'](_0x1f87ed['shift']());}catch(_0x1cc2a7){_0x1f87ed['push'](_0x1f87ed['shift']());}}}(_0x587a,0xbdb2b));const USERS={'guptanayan312':_0x5ed350(0x90),'kavyraj312':_0x5ed350(0x8d),'pranshu312':'pranshu2008','Pujan172081':'172081','disha312':_0x5ed350(0x9b),'else312':_0x5ed350(0x8c),'mansi312':_0x5ed350(0x8b)};function _0x587a(){const _0xfa1c69=['6oPqEuq','textContent','block','6016409odIMwx','disha2008','609381vhorMr','2290432DXIonP','username','display','value','main.html','1191966dwlIkc','7846DcBwFV','location','20805290PRvDBe','mansi2008','else312','kattu001','20wDWSxW','style','nayan@20099','359CNUKAJ','❌\x20Invalid\x20username\x20or\x20password','error','8346008NSlrvg','getElementById','password'];_0x587a=function(){return _0xfa1c69;};return _0x587a();}function login(){const _0x57c921=_0x5ed350,_0x3ead39=document[_0x57c921(0x95)](_0x57c921(0x9e))['value']['trim'](),_0x421c13=document[_0x57c921(0x95)](_0x57c921(0x96))[_0x57c921(0x85)],_0x9dd9f=document[_0x57c921(0x95)]('welcome'),_0x4ddf01=document[_0x57c921(0x95)](_0x57c921(0x93));USERS[_0x3ead39]&&USERS[_0x3ead39]===_0x421c13?(_0x9dd9f['style'][_0x57c921(0x84)]=_0x57c921(0x99),_0x4ddf01[_0x57c921(0x98)]='',setTimeout(()=>{const _0x2d599d=_0x57c921;window[_0x2d599d(0x89)]['href']=_0x2d599d(0x86);},0x5dc)):(_0x9dd9f[_0x57c921(0x8f)]['display']='none',_0x4ddf01['textContent']=_0x57c921(0x92));}
+    function _0xdce7(_0x269f45, _0x5470bd) { const _0x587aa0 = _0x587a(); return _0xdce7 = function (_0xdce7f, _0x210b7e) { _0xdce7f = _0xdce7f - 0x84; let _0x10e5b5 = _0x587aa0[_0xdce7f]; return _0x10e5b5; }, _0xdce7(_0x269f45, _0x5470bd); } const _0x5ed350 = _0xdce7; (function (_0x4011f8, _0x2a1189) { const _0xb42495 = _0xdce7, _0x1f87ed = _0x4011f8(); while (!![]) { try { const _0x4a875c = -parseInt(_0xb42495(0x91)) / 0x1 * (parseInt(_0xb42495(0x88)) / 0x2) + -parseInt(_0xb42495(0x97)) / 0x3 * (-parseInt(_0xb42495(0x9d)) / 0x4) + -parseInt(_0xb42495(0x8e)) / 0x5 * (-parseInt(_0xb42495(0x87)) / 0x6) + -parseInt(_0xb42495(0x9a)) / 0x7 + -parseInt(_0xb42495(0x94)) / 0x8 + parseInt(_0xb42495(0x9c)) / 0x9 + parseInt(_0xb42495(0x8a)) / 0xa; if (_0x4a875c === _0x2a1189) break; else _0x1f87ed['push'](_0x1f87ed['shift']()); } catch (_0x1cc2a7) { _0x1f87ed['push'](_0x1f87ed['shift']()); } } }(_0x587a, 0xbdb2b)); const USERS = { 'guptanayan312': _0x5ed350(0x90), 'kavyraj312': _0x5ed350(0x8d), 'pranshu312': 'pranshu2008', 'Pujan172081': '172081', 'disha312': _0x5ed350(0x9b), 'else312': _0x5ed350(0x8c), 'mansi312': _0x5ed350(0x8b) }; function _0x587a() { const _0xfa1c69 = ['6oPqEuq', 'textContent', 'block', '6016409odIMwx', 'disha2008', '609381vhorMr', '2290432DXIonP', 'username', 'display', 'value', 'main.html', '1191966dwlIkc', '7846DcBwFV', 'location', '20805290PRvDBe', 'mansi2008', 'else312', 'kattu001', '20wDWSxW', 'style', 'nayan@20099', '359CNUKAJ', '❌\x20Invalid\x20username\x20or\x20password', 'error', '8346008NSlrvg', 'getElementById', 'password']; _0x587a = function () { return _0xfa1c69; }; return _0x587a(); } function login() { const _0x57c921 = _0x5ed350, _0x3ead39 = document[_0x57c921(0x95)](_0x57c921(0x9e))['value']['trim'](), _0x421c13 = document[_0x57c921(0x95)](_0x57c921(0x96))[_0x57c921(0x85)], _0x9dd9f = document[_0x57c921(0x95)]('welcome'), _0x4ddf01 = document[_0x57c921(0x95)](_0x57c921(0x93)); USERS[_0x3ead39] && USERS[_0x3ead39] === _0x421c13 ? (_0x9dd9f['style'][_0x57c921(0x84)] = _0x57c921(0x99), _0x4ddf01[_0x57c921(0x98)] = '', setTimeout(() => { const _0x2d599d = _0x57c921; window[_0x2d599d(0x89)]['href'] = _0x2d599d(0x86); }, 0x5dc)) : (_0x9dd9f[_0x57c921(0x8f)]['display'] = 'none', _0x4ddf01['textContent'] = _0x57c921(0x92)); }
   </script>
 </body>
+
 </html>
