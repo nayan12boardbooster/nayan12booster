@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <title>12 Board Booster</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top, #0d0d2b 0%, #000000 100%);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 2px);
+      background-size: 4px 4px;
+      animation: twinkle 4s infinite linear;
+      z-index: 0;
+    }
+
+    @keyframes twinkle {
+      0% {opacity: 0.8;}
+      50% {opacity: 1;}
+      100% {opacity: 0.8;}
+    }
+
+    .login-container {
+      position: relative;
+      z-index: 1;
+      background: rgba(0, 0, 30, 0.8);
+      border: 1px solid rgba(0, 0, 50, 0.6);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+      padding: 30px 40px;
+      border-radius: 12px;
+      width: 350px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    aside {
+      font-size: 1rem;
+      font-style: italic;
+      color: #87cefa;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #111;
+      color: #0ff;
+      box-shadow: inset 0 0 5px #00ffff;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 6px;
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00bfff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 15px;
+      box-shadow: 0 0 15px #00ffff, 0 0 30px #00bfff;
+    }
+
+    button:hover {
+      background-color: #00aaff;
+    }
+
+    .error {
+      color: #ff4444;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .welcome {
+      color: #7fffd4;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .credits {
+      margin-top: 5px;
+      font-style: italic;
+      color: #f0e68c;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <div class="login-container">
+    <h2>12 Board Booster</h2>
+    <aside>BY – Nayan Gupta and Kavyaraj</aside>
+
+    <div class="error" id="error"></div>
+    <div class="welcome" id="welcome">🚀 Welcome to the stars!</div>
+
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    
+    <div style="text-align:left; margin-bottom:10px;">
+      <label><input type="checkbox" id="remember" /> Remember Me</label>
+    </div>
+
+    <button onclick="login()">Log In</button>
+  </div>
+
+  <footer>
+    <p>🚀 This website has rights reserved and made in 2025.</p>
+    <div class="credits">Made by Nayan Gupta | Credit goes to Kavyaraj Atodariya</div>
+  </footer>
+
+  <script>
+    const USERS = {
+      "guptanayan312": "nayan@20099",
+      "kavyraj312": "kattu001",
+      "pranshu312": "pranshu2008",
+      "Pujan172081": "172081",
+      "disha312": "disha2008",
+      "else312": "else312",
+      "mansi312": "mansi2008"
+    };
+
+    function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+      const welcome = document.getElementById("welcome");
+      const error = document.getElementById("error");
+
+      if (USERS[username] && USERS[username] === password) {
+        welcome.style.display = "block";
+        error.textContent = "";
+        setTimeout(() => {
+          window.location.href = "main.html";
+        }, 1500);
+      } else {
+        welcome.style.display = "none";
+        error.textContent = "❌ Invalid username or password";
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
