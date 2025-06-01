@@ -238,6 +238,39 @@
 
 <body>
     <header>12 Boards Booster</header>
+    <!-- Music and Quote (Bottom Right) -->
+    <div id="musicBox" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  text-align: right;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #87cefa;
+  pointer-events: auto;
+  text-shadow: 0 0 5px #00ffff;
+">
+
+        <audio id="bgMusic" autoplay loop>
+            <source src="goosebumps.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <button onclick="toggleMusic()" id="musicBtn" style="
+    padding: 6px 14px;
+    background-color: #00bfff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00bfff;
+    text-shadow: 0 0 3px #fff;
+  ">
+            🔊 Pause Music
+        </button>
+    </div>
 
     <!-- Clock and Logout Bar -->
     <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
@@ -269,7 +302,7 @@
         <div class="container">
             <aside>
                 <h3>12 Boards Booster</h3>
-                Made by <br /> <strong>Nayan Gupta</strong> 
+                Made by <br /> <strong>Nayan Gupta</strong>
                 <p class="quote">"Confidence is not arrogance,<br>it's mastery in motion."</p>
                 <br> <img src="space.jpg" alt="Space image" width="180" height="180">
             </aside>
@@ -308,7 +341,7 @@
 
     <footer>
         This website has all rights reserved and made in 2025.<br />
-        Made by Nayan Gupta 
+        Made by Nayan Gupta
     </footer>
 
     <script>
@@ -336,6 +369,21 @@
         }
         setInterval(updateClock, 1000);
         updateClock();
+        
+        //Music Java 
+    function toggleMusic() {
+      const music = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicBtn');
+
+      if (music.paused) {
+        music.play();
+        btn.textContent = '🔊 Pause Music';
+      } else {
+        music.pause();
+        btn.textContent = '🔈 Play Music';
+      }
+    }
+
     </script>
 </body>
 
