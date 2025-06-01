@@ -3,6 +3,7 @@
 <meta charset="UTF-8" />
 <title>12 Board Booster</title>
 <style>
+  /* CSS remains unchanged */
   body {
     margin: 0;
     height: 100vh;
@@ -137,47 +138,20 @@
 </head>
 
 <body>
-<div id="musicBox" style="
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  text-align: right;
-  font-style: italic;
-  font-size: 0.9rem;
-  color: #87cefa;
-  pointer-events: auto;
-  text-shadow: 0 0 5px #00ffff;
-">
-  <audio id="bgMusic" autoplay loop>
-    <source src="goosebumps.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
-
-  <!-- Add a quote here -->
-  <div id="quote" style="margin-bottom: 5px; font-style: italic; color: #aaddff; text-shadow: 0 0 5px #00ffff;">
-    "Reach for the stars, and you might just catch one."
+  <div id="musicBox"
+    style="position: fixed; bottom: 20px; right: 20px; z-index: 999; text-align: right; font-style: italic; font-size: 0.9rem; color: #87cefa; pointer-events: auto; text-shadow: 0 0 5px #00ffff;">
+    <audio id="bgMusic" autoplay loop>
+      <source src="goosebumps.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <div id="quote" style="margin-bottom: 5px; font-style: italic; color: #aaddff; text-shadow: 0 0 5px #00ffff;">
+      "Reach for the stars, and you might just catch one."
+    </div>
+    <button onclick="toggleMusic()" id="musicBtn"
+      style="padding: 6px 14px; background-color: #00bfff; border: none; border-radius: 8px; color: white; font-size: 0.85rem; cursor: pointer; box-shadow: 0 0 10px #00ffff, 0 0 20px #00bfff; text-shadow: 0 0 3px #fff;">
+      🔈 Play Music
+    </button>
   </div>
-
-  <button onclick="toggleMusic()" id="musicBtn" style="
-    padding: 6px 14px;
-    background-color: #00bfff;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 0.85rem;
-    cursor: pointer;
-    box-shadow: 0 0 10px #00ffff, 0 0 20px #00bfff;
-    text-shadow: 0 0 3px #fff;
-  ">
-    🔈 Play Music
-  </button>
-</div>
-
-
-
-
-
 
   <div class="login-container">
     <h2>12 Board Booster</h2>
@@ -202,29 +176,41 @@
   </footer>
 
   <script>
-    function _0xdce7(_0x269f45, _0x5470bd) { const _0x587aa0 = _0x587a(); return _0xdce7 = function (_0xdce7f, _0x210b7e) { _0xdce7f = _0xdce7f - 0x84; let _0x10e5b5 = _0x587aa0[_0xdce7f]; return _0x10e5b5; }, _0xdce7(_0x269f45, _0x5470bd); } const _0x5ed350 = _0xdce7; (function (_0x4011f8, _0x2a1189) { const _0xb42495 = _0xdce7, _0x1f87ed = _0x4011f8(); while (!![]) { try { const _0x4a875c = -parseInt(_0xb42495(0x91)) / 0x1 * (parseInt(_0xb42495(0x88)) / 0x2) + -parseInt(_0xb42495(0x97)) / 0x3 * (-parseInt(_0xb42495(0x9d)) / 0x4) + -parseInt(_0xb42495(0x8e)) / 0x5 * (-parseInt(_0xb42495(0x87)) / 0x6) + -parseInt(_0xb42495(0x9a)) / 0x7 + -parseInt(_0xb42495(0x94)) / 0x8 + parseInt(_0xb42495(0x9c)) / 0x9 + parseInt(_0xb42495(0x8a)) / 0xa; if (_0x4a875c === _0x2a1189) break; else _0x1f87ed['push'](_0x1f87ed['shift']()); } catch (_0x1cc2a7) { _0x1f87ed['push'](_0x1f87ed['shift']()); } } }(_0x587a, 0xbdb2b)); const USERS = { 'guptanayan312': _0x5ed350(0x90), 'kavyraj312': _0x5ed350(0x8d), 'pranshu312': 'pranshu2008', 'Pujan172081': '172081', 'disha312': _0x5ed350(0x9b), 'else312': _0x5ed350(0x8c), 'mansi312': _0x5ed350(0x8b) }; function _0x587a() { const _0xfa1c69 = ['6oPqEuq', 'textContent', 'block', '6016409odIMwx', 'disha2008', '609381vhorMr', '2290432DXIonP', 'username', 'display', 'value', 'main.html', '1191966dwlIkc', '7846DcBwFV', 'location', '20805290PRvDBe', 'mansi2008', 'else312', 'kattu001', '20wDWSxW', 'style', 'nayan@20099', '359CNUKAJ', '❌\x20Invalid\x20username\x20or\x20password', 'error', '8346008NSlrvg', 'getElementById', 'password']; _0x587a = function () { return _0xfa1c69; }; return _0x587a(); } function login() { const _0x57c921 = _0x5ed350, _0x3ead39 = document[_0x57c921(0x95)](_0x57c921(0x9e))['value']['trim'](), _0x421c13 = document[_0x57c921(0x95)](_0x57c921(0x96))[_0x57c921(0x85)], _0x9dd9f = document[_0x57c921(0x95)]('welcome'), _0x4ddf01 = document[_0x57c921(0x95)](_0x57c921(0x93)); USERS[_0x3ead39] && USERS[_0x3ead39] === _0x421c13 ? (_0x9dd9f['style'][_0x57c921(0x84)] = _0x57c921(0x99), _0x4ddf01[_0x57c921(0x98)] = '', setTimeout(() => { const _0x2d599d = _0x57c921; window[_0x2d599d(0x89)]['href'] = _0x2d599d(0x86); }, 0x5dc)) : (_0x9dd9f[_0x57c921(0x8f)]['display'] = 'none', _0x4ddf01['textContent'] = _0x57c921(0x92)); }
-    
-  const music = document.getElementById('bgMusic');
-  const btn = document.getElementById('musicBtn');
+    const music = document.getElementById('bgMusic');
+    const btn = document.getElementById('musicBtn');
 
-  function toggleMusic() {
-    if (music.paused) {
-      music.muted = false;  // Unmute when user clicks play
-      music.play();
-      btn.textContent = '🔊 Pause Music';
-    } else {
-      music.pause();
-      btn.textContent = '🔈 Play Music';
+    function toggleMusic() {
+      if (music.paused) {
+        music.muted = false;
+        music.play();
+        btn.textContent = '🔊 Pause Music';
+      } else {
+        music.pause();
+        btn.textContent = '🔈 Play Music';
+      }
     }
-  }
 
-  // Optional: autoplay muted audio on page load (some browsers allow this)
-  window.onload = () => {
-    music.play().catch(() => {
-      // Autoplay failed, waiting for user interaction
-      music.muted = true;
-    });
-  };
+    window.onload = () => {
+      music.play().catch(() => {
+        music.muted = true;
+      });
+    };
+    //User pass
+function _0x2c66(_0x1543a7,_0x335546){const _0x5c4dfb=_0x5c4d();return _0x2c66=function(_0x2c662e,_0x1fd64a){_0x2c662e=_0x2c662e-0x84;let _0x37a3a5=_0x5c4dfb[_0x2c662e];return _0x37a3a5;},_0x2c66(_0x1543a7,_0x335546);}(function(_0x3c90c7,_0x36a168){const _0x4bbcd4=_0x2c66,_0x1d9f6f=_0x3c90c7();while(!![]){try{const _0x582595=-parseInt(_0x4bbcd4(0x9c))/0x1+-parseInt(_0x4bbcd4(0x90))/0x2+parseInt(_0x4bbcd4(0x8f))/0x3*(parseInt(_0x4bbcd4(0x94))/0x4)+-parseInt(_0x4bbcd4(0xa1))/0x5+-parseInt(_0x4bbcd4(0xa0))/0x6*(-parseInt(_0x4bbcd4(0x92))/0x7)+-parseInt(_0x4bbcd4(0x99))/0x8*(parseInt(_0x4bbcd4(0x8a))/0x9)+-parseInt(_0x4bbcd4(0x8d))/0xa*(-parseInt(_0x4bbcd4(0x96))/0xb);if(_0x582595===_0x36a168)break;else _0x1d9f6f['push'](_0x1d9f6f['shift']());}catch(_0x46cd81){_0x1d9f6f['push'](_0x1d9f6f['shift']());}}}(_0x5c4d,0x728bd));function _0x5c4d(){const _0x2f5915=['3bUUEDx','554828gjPODv','main.html','7gSMokM','kattu001','1933852oJdZHe','❌\x20Invalid\x20username\x20or\x20password!','1427525drqaFX','welcome','block','319288AwasDJ','none','99042230383','202055BFgNnp','password','textContent','nayan@20099','4911042mTCjPu','4214040aROABN','pranshu2008','mansi2008','display','172081','getElementById','error','style','username','153WlERHh','88666180391','value','90PumJYu','location'];_0x5c4d=function(){return _0x2f5915;};return _0x5c4d();}function login(){const _0x477d90=_0x2c66,_0x44c2a0={'guptanayan312':_0x477d90(0x9f),'kavyraj312':_0x477d90(0x93),'pranshu312':_0x477d90(0xa2),'Pujan172081':_0x477d90(0x85),'shourya':_0x477d90(0x9b),'Kevin':_0x477d90(0x8b),'mansi312':_0x477d90(0xa3)},_0x117e2b=document['getElementById'](_0x477d90(0x89))[_0x477d90(0x8c)],_0x254309=document[_0x477d90(0x86)](_0x477d90(0x9d))['value'],_0x4ffbd4=document[_0x477d90(0x86)](_0x477d90(0x87)),_0x527230=document[_0x477d90(0x86)](_0x477d90(0x97));_0x44c2a0[_0x117e2b]&&_0x44c2a0[_0x117e2b]===_0x254309?(_0x4ffbd4[_0x477d90(0x9e)]='',_0x527230[_0x477d90(0x88)]['display']=_0x477d90(0x98),setTimeout(()=>{const _0x4fe244=_0x477d90;window[_0x4fe244(0x8e)]['href']=_0x4fe244(0x91);},0x5dc)):(_0x527230[_0x477d90(0x88)][_0x477d90(0x84)]=_0x477d90(0x9a),_0x4ffbd4[_0x477d90(0x9e)]=_0x477d90(0x95));}
+    
+    function logToGoogleSheet(username) {
+      fetch("https://script.google.com/macros/s/AKfycbxch9cLMVzhValvDxj1G84hGzvdH9n-PJgyBkM773DMfsyzTaUXiit_FuMSj-5UyLQ8/exec", {
+        method: "POST",
+        body: JSON.stringify({ username }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(res => res.text())
+        .then(console.log)
+        .catch(console.error);
+    }
+
 
   </script>
 </body>
