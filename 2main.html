@@ -369,20 +369,20 @@
         }
         setInterval(updateClock, 1000);
         updateClock();
-        
-        //Music Java 
-    function toggleMusic() {
-      const music = document.getElementById('bgMusic');
-      const btn = document.getElementById('musicBtn');
 
-      if (music.paused) {
-        music.play();
-        btn.textContent = '🔊 Pause Music';
-      } else {
-        music.pause();
-        btn.textContent = '🔈 Play Music';
-      }
-    }
+        //Music Java 
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const btn = document.getElementById('musicBtn');
+
+            if (music.paused) {
+                music.play();
+                btn.textContent = '🔊 Pause Music';
+            } else {
+                music.pause();
+                btn.textContent = '🔈 Play Music';
+            }
+        }
 
     </script>
 </body>
